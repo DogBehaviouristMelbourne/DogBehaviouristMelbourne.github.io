@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dog Behaviourist Melbourne</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Bootstrap CSS for responsive design -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <header class="bg-primary text-white py-3">
+        <div class="container">
+            <h1>Dog Behaviourist Melbourne</h1>
+            <p>Find professional dog trainers specializing in behavior modification</p>
+        </div>
+    </header>
+
+    <div class="container-fluid mt-3">
+        <div class="row">
+            <!-- Sidebar with filters and listings -->
+            <div class="col-md-3 mb-3">
+                <div class="card">
+                    <div class="card-header bg-primary text-white">
+                        <h3>Find Trainers</h3>
+                    </div>
+                    <div class="card-body">
+                        <div class="form-check mb-3">
+                            <input class="form-check-input" type="checkbox" id="reactiveDogsFilter" onchange="filterReactiveDogs()">
+                            <label class="form-check-label" for="reactiveDogsFilter">
+                                Reactive Dogs Only
+                            </label>
+                        </div>
+                        
+                        <h4 class="mt-4">Featured Trainer</h4>
+                        <div id="featuredTrainer" class="card mb-3 featured-card">
+                            <!-- Featured trainer will be populated by JavaScript -->
+                        </div>
+                        
+                        <h4 class="mt-4">All Trainers</h4>
+                        <div id="trainersList">
+                            <!-- Trainer listings will be populated by JavaScript -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Map container -->
+            <div class="col-md-9">
+                <div id="map"></div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-dark text-white py-3 mt-5">
+        <div class="container text-center">
+            <p>&copy; 2025 Dog Behaviourist Melbourne</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+    <!-- Google Maps JavaScript API with callback to initMap function -->
+    <script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap">
+    </script>
+</body>
+</html>

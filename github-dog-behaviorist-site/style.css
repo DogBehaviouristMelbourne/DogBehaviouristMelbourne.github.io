@@ -1,0 +1,83 @@
+/* Main styles for Dog Behaviourist Melbourne website */
+
+/* Map container styling */
+#map {
+    height: 600px;
+    width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Trainer card styling */
+.trainer-card {
+    margin-bottom: 15px;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.trainer-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Featured trainer card styling */
+.featured-card {
+    border: 2px solid #0d6efd;
+    background-color: #f8f9ff;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    #map {
+        height: 400px;
+        margin-top: 15px;
+    }
+    
+    .col-md-3, .col-md-9 {
+        padding: 0 15px;
+    }
+}
+
+/* Trainer badge styling */
+.badge-reactive {
+    background-color: #dc3545;
+    color: white;
+    padding: 3px 8px;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    margin-left: 5px;
+}
+
+/* Hidden class for filtering */
+.hidden {
+    display: none;
+}
+
+/* Info window styling for map markers */
+.info-window {
+    padding: 5px;
+    max-width: 250px;
+}
+
+.info-window h5 {
+    margin-top: 0;
+    color: #0d6efd;
+}
+
+.info-window p {
+    margin-bottom: 5px;
+}
+
+/* Button styling */
+.btn-view-profile {
+    background-color: #0d6efd;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.btn-view-profile:hover {
+    background-color: #0b5ed7;
+}
