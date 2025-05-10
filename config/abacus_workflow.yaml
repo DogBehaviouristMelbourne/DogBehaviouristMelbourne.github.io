@@ -1,0 +1,41 @@
+trigger:
+  type: github_file
+  repo: DogBehaviouristMelbourne/DogBehaviouristMelbourne.github.io
+  file: instructions.md
+  events: [push]
+
+execution:
+  autonomy_level: high
+  cost_constraints:
+    max_monthly_usd: 10
+    enforce: hard_stop
+
+storage:
+  rules:
+    - condition: data_size < 1MB && reads > writes
+      database: firebase
+    - condition: data_size >= 1MB || structured_data
+      database: airtable
+
+llm:
+  default: gpt-3.5-turbo
+  fallback: claude-haiku
+  premium:
+    model: gpt-4
+    require_approval: true
+
+deployment:
+  type: github_pages
+  branch: main
+  validation:
+    required: true
+    timeout: 10m
+
+notifications:
+  channels:
+    - type: discord
+      webhook: ${env.DISCORD_WEBHOOK}
+  events:
+    - task_completed
+    - cost_alert
+    - workflow_modified
